@@ -1,0 +1,39 @@
+{
+  "dimension": "nether",
+  "color": "#FF5722",
+  "stations": [
+    {
+      "name": "00枢纽",
+      "x": 0,
+      "z": 0,
+      "lines": ["地狱干线", "1K环线"],
+      "transfer": true,
+      "status": "operational"
+    },
+    {
+      "name": "东环线",
+      "x": 1000,
+      "z": 0,
+      "lines": ["地狱环线"],
+      "transfer": false,
+      "status": "planned"
+    },
+    {
+      "name": "南环线",
+      "x": 0,
+      "z": 1000,
+      "lines": ["地狱环线"],
+      "transfer": false,
+      "status": "planned"
+    }
+  ],
+  "lines": [
+    {
+      "name": "地狱环线",
+      "color": "#9C27B0",
+      "stations": ["00枢纽", "东环线", "南环线", "西环线", "北环线"],
+      "isLoop": true,
+      "status": "planned"
+    }
+  ]
+}
