@@ -1,0 +1,61 @@
+#map-container {
+    position: relative;
+    height: 100vh;
+}
+
+#map {
+    height: 100%;
+}
+
+#dimension-selector {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#dimension-selector button {
+    display: block;
+    margin: 5px 0;
+    padding: 8px 15px;
+    background: #eee;
+    border: none;
+    cursor: pointer;
+}
+
+#dimension-selector button.active {
+    background: #2196F3;
+    color: white;
+}
+
+.status.operational { color: #4CAF50; }
+.status.planned { color: #9E9E9E; }
+
+.leaflet-marker-icon.hub {
+    filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
+}
+
+.legend {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
