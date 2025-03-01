@@ -39,26 +39,12 @@ class Map {
     renderDimension(data) {
         const layer = this.layers[data.dimension];
         
-        data.stations.forEach(station => {
-            const marker = L.circleMarker([station.x, station.z], {
-                color: data.color,
-                radius: station.transfer ? 8 : 5
-            }).bindPopup(`
-                <h3>${station.name}</h3>
-                <p>坐标：X=${station.x}, Z=${station.z}</p>
-                <p>线路：${station.lines.join(', ')}</p>
-            `);
-            
-            layer.addLayer(marker);
-        });
-        
-        this.map.addLayer(layer);
-    }
         data.lines?.forEach(line => {
             const coordinates = line.stations.map(name => {
                 const station = data.stations.find(s => s.name === name);
                 return [station.x, station.z];
             });
+            
             if(line.isLoop && coordinates.length > 0) {
                 coordinates.push(coordinates[0]);
             }
@@ -83,6 +69,20 @@ class Map {
         });
         
         this.map.addLayer(layer);
+    }
+
+    createPopupContent(station) {
+        return `
+            <div class="station-popup">
+                <h3>${station.name}</h3>
+                <p class="status ${station.status}">状态：${{
+                    operational: '运营中',
+                    planned: '规划中'
+                }[station.status]}</p>
+                <p>坐标：X=${station.x}, Z=${station.z}</p>
+                <p>线路：${station.lines.join(', ')}</p>
+            </div>
+        `;
     }
 
     createPopupContent(station) {
