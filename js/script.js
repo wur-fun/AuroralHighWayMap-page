@@ -39,7 +39,7 @@ class Map {
     renderDimension(data) {
         const layer = this.layers[data.dimension];
         
-        data.lines?.forEach(line => {
+        data.lines.forEach(line => {
             const coordinates = line.stations.map(name => {
                 const station = data.stations.find(s => s.name === name);
                 return [station.x, station.z];
