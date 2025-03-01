@@ -1,0 +1,13 @@
+{
+  "dimension": "overworld",
+  "color": "#FF5722",
+  "stations": [
+    {
+      "name": "出生点",
+      "x": 0,
+      "z": 0,
+      "lines": ["枫雨地铁"],
+      "transfer": true,
+      "status": "operational"
+    }
+}
